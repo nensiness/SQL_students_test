@@ -11,7 +11,7 @@ CREATE TABLE Progress
 INSERT INTO Progress
 	(StudentID, ClassroomID, Score)
 VALUES
-	    (1, 1, 10),
+	(1, 1, 10),
         (1, 2, 9),
         (1, 3, 9),
         (1, 4, 9),
