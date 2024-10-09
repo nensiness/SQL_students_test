@@ -3,9 +3,9 @@ CREATE TABLE Progress
 	ProgressID INTEGER PRIMARY KEY,
 	StudentID INTEGER NOT NULL,
 	ClassroomID INTEGER NOT NULL,
-	Score INTEGER NOT NULL,
-	FOREIGN KEY (StudentID) REFERENCES Students (StudentID),
-	FOREIGN KEY (ClassroomID) REFERENCES Class_rooms (ClassroomID)
+	Score INTEGER NOT NULL, 
+	FOREIGN KEY (StudentID) REFERENCES Students (StudentID), -- присвоен вторичный ключ для связи с таблицей Students
+	FOREIGN KEY (ClassroomID) REFERENCES Class_rooms (ClassroomID) -- присвоен вторичный ключ для связи с таблицей Class_rooms
 );
 
 INSERT INTO Progress
