@@ -7,7 +7,7 @@
 - **Create Students.sql**: скрипт для создания таблицы `Students` и её наполнения.
 - **Create Class_rooms.sql**: скрипт для создания таблицы `Class_rooms` и её наполнения.
 - **Create Progress.sql**: скрипт для создания таблицы `Progress` и её наполнения.
-- **sql Others.sql**: SQL-запросы для выборки и группировки
+- **sql_requests.sql**: SQL-запросы для выборки и группировки
 
 
 Скриншот таблицы **Students**
