@@ -1,3 +1,5 @@
+--Создание таблицы
+
 CREATE TABLE Progress
 (
 	ProgressID INTEGER PRIMARY KEY,
@@ -7,6 +9,9 @@ CREATE TABLE Progress
 	FOREIGN KEY (StudentID) REFERENCES Students (StudentID), -- присвоен вторичный ключ для связи с таблицей Students
 	FOREIGN KEY (ClassroomID) REFERENCES Class_rooms (ClassroomID) -- присвоен вторичный ключ для связи с таблицей Class_rooms
 );
+
+
+--Заполнение таблицы данными
 
 INSERT INTO Progress
 	(StudentID, ClassroomID, Score)
@@ -36,3 +41,37 @@ VALUES
         (5, 3, 9),
         (5, 4, 9),
         (5, 5, 8);
+
+--Примеры SQL запросов
+
+SELECT * 
+FROM Progress  
+Order by ProgressID DESC
+LIMIT 2;
+--Сортировка данных в порядке убывания;
+
+SELECT AVG(Score) AS Среднее FROM Progress WHERE StudentID=1 ;
+--Находим среднее значение колонки Score Таблицы Progress по студенту с ID-1
+
+Или
+
+SELECT SUM(Score)/ COUNT(Score)  AS Среднее FROM Progress WHERE StudentID=1 ;
+--Находим среднее значение колонки Score Таблицы Progress по студенту с ID-1
+
+SELECT DISTINCT StudentID
+FROM Progress
+WHERE Score < 7;
+--Находим студентов, у которых есть хотя бы один балл ниже 7
+
+SELECT StudentID
+FROM Progress
+GROUP BY StudentID
+HAVING MAX(Score) = 10;
+--Находим студентов, у которых максимальный балл равен 10
+
+SELECT StudentID, SUM(Score) AS TotalScore
+FROM Progress
+GROUP BY StudentID
+ORDER BY TotalScore DESC
+LIMIT 1;
+--Находим студентов с наибольшей суммой баллов
