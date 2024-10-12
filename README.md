@@ -4,10 +4,10 @@
 
 Структура проекта
 
-- Create Students.sql: скрипт для создания таблицы `Students` и её наполнения.
-- Create Class_rooms.sql: скрипт для создания таблицы `Class_rooms` и её наполнения.
-- Create Progress.sql: скрипт для создания таблицы `Progress` и её наполнения.
-- sql_requests.sql: SQL-запросы для выборки и группировки
+- Create Students.sql: скрипт для создания таблицы `Students` и её наполнения + примеры SQL запросов по таблице
+- Create Class_rooms.sql: скрипт для создания таблицы `Class_rooms` и её наполнения + примеры SQL запросов по таблице
+- Create Progress.sql: скрипт для создания таблицы `Progress` и её наполнения + примеры SQL запросов по таблице
+
 
 
 Таблица **Students**
