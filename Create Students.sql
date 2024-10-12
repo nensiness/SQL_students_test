@@ -1,3 +1,5 @@
+--Создание таблицы
+
 CREATE TABLE Students
 (
 	StudentID INTEGER PRIMARY KEY,
@@ -6,7 +8,9 @@ CREATE TABLE Students
 	Country VARCHAR(255) NOT NULL,
 	Language VARCHAR(255) NULL,
 	Date_birth DATETIME NULL
-);
+); 
+
+--Заполнение таблицы данными
 
 INSERT INTO Students
 	(First_name, Last_name, Country, Language, Date_birth)
@@ -16,3 +20,31 @@ VALUES
 	('Olga', 'Nilson', 'UK', 'ENG', '1975-01-01'),
 	('Victor', 'Barinov', 'RUS', 'RU', '1985-11-18'),
 	('Nensi', 'Ness', 'USA', 'ENG', '1998-09-25');
+
+--Примеры SQL запросов 
+
+SELECT Country, COUNT(Country)
+FROM Students
+Group By Country;
+--Группировка по количеству каждой страны в данном столбце(Страна);
+
+SELECT First_name, Last_name
+FROM Students
+WHERE Country = 'RUS';
+--Находим всех студентов из России
+
+SELECT First_name, Last_name, Date_birth
+FROM Students
+WHERE Date_birth < '1990-01-01';
+--Находим студентов с датой с годом рождения до 1990
+
+SELECT Language, COUNT(*) AS StudentCount
+FROM Students
+GROUP BY Language;
+--Количество студентов для каждого языка
+
+SELECT First_name, Last_name
+FROM Students
+WHERE Last_name LIKE 'N%';
+--Находим имена и фамилии студентов, у которых фамилия начинается с буквы 'N'
+
