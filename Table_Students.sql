@@ -48,3 +48,16 @@ FROM Students
 WHERE Last_name LIKE 'N%';
 --Находим имена и фамилии студентов, у которых фамилия начинается с буквы 'N'
 
+
+INSERT INTO Students
+	(First_name, Last_name, Country, Language, Date_birth)
+VALUES
+	('Elena', 'Bauman', 'RUS', 'RU', '1995-07-19');
+--Создаем нового студента, чтобы далее сделать SQL запрос на удаление. Существующих студентов удалить не можем, так как они связаны с таблицей Progress
+
+DELETE 
+FROM Students
+WHERE First_name='Elena'
+AND Last_name='Bauman'
+--Удаляем студента из таблицы
+
